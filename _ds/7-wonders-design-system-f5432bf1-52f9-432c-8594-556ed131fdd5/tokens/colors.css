@@ -1,0 +1,37 @@
+:root{
+--black:#000000;
+--ink:#0d020d;
+--ink-raised:#1e0a1d;
+--plum-900:#590e58;
+--plum-800:#5f1060;
+--magenta-700:#8e2e8f;
+--magenta-600:#972d8f;
+--magenta-500:#c51cb9;
+--magenta-400:#ff1fed;
+--magenta-300:#ff43f3;
+--orchid-400:#c585c0;
+--orchid-300:#d189da;
+--lilac-200:#e1b4e4;
+--lilac-100:#f9d2fc;
+--blush-050:#feefff;
+--blush-025:#fffdfe;
+--white:#ffffff;
+
+--surface-page:var(--ink);
+--surface-raised:var(--ink-raised);
+--surface-card:rgba(143,46,144,0.10);
+--surface-card-strong:rgba(143,46,144,0.40);
+--surface-inverse:var(--white);
+--text-primary:var(--white);
+--text-secondary:var(--lilac-100);
+--text-muted:var(--orchid-400);
+--text-on-light:var(--ink);
+--border-subtle:rgba(13,2,13,0.15);
+--border-lilac:var(--lilac-200);
+--accent:var(--magenta-400);
+--accent-deep:var(--plum-900);
+--glow-magenta:rgba(252,207,255,0.40);
+--shadow-ink:rgba(13,2,13,0.52);
+--gradient-brand:linear-gradient(135deg,#0d020d 0%,#590e58 45%,#8e2e8f 72%,#ff1fed 100%); /* @kind color */
+--gradient-plum:linear-gradient(180deg,#590e58 0%,#0d020d 100%); /* @kind color */
+}

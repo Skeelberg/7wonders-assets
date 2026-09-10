@@ -1,0 +1,331 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Montserrat|Lato|Playfair Display|Poppins|Montez))/i]",
+        "message": "Font not provided by the design system. Available: Montserrat, Lato, Playfair Display, Poppins, Montez."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Arrow1'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<Arrow1> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Calendar'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|text1|icon2|icon3|icon4|key|ref|className|style|children)$/]",
+        "message": "<Calendar> doesn't accept that prop. Declared props: className, style, text1, icon2, icon3, icon4."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Color'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|swatch|text1|text2|key|ref|className|style|children)$/]",
+        "message": "<Color> doesn't accept that prop. Declared props: className, style, swatch, text1, text2."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DateActive'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|icon1|key|ref|className|style|children)$/]",
+        "message": "<DateActive> doesn't accept that prop. Declared props: className, style, icon1."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DateInactive'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|text1|key|ref|className|style|children)$/]",
+        "message": "<DateInactive> doesn't accept that prop. Declared props: className, style, text1."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FluentArrowUp16Filled'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<FluentArrowUp16Filled> doesn't accept that prop. Declared props: className, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Glowing'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|arrow|type|text|hover|icon1|key|ref|className|style|children)$/]",
+        "message": "<Glowing> doesn't accept that prop. Declared props: className, style, arrow, type, text, hover, icon1."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Glowing'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:primary|secondary)$/]",
+        "message": "<Glowing> type must be one of 'primary' | 'secondary'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icons'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|icon|key|ref|className|style|children)$/]",
+        "message": "<Icons> doesn't accept that prop. Declared props: className, style, icon."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icons'] > JSXAttribute[name.name='icon'] > Literal[value!=/^(?:check-bold|dots-vertical|close|arrow-down|arrow-up|arrow-left|arrow-right|download)$/]",
+        "message": "<Icons> icon must be one of 'check-bold' | 'dots-vertical' | 'close' | 'arrow-down' | 'arrow-up' | 'arrow-left' | 'arrow-right' | 'download'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Informative'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|hover|buttonText|arrow|tagText|icon1|key|ref|className|style|children)$/]",
+        "message": "<Informative> doesn't accept that prop. Declared props: className, style, hover, buttonText, arrow, tagText, icon1."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Month'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|text1|key|ref|className|style|children)$/]",
+        "message": "<Month> doesn't accept that prop. Declared props: className, style, text1."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SocialIcons'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|platform|color|key|ref|className|style|children)$/]",
+        "message": "<SocialIcons> doesn't accept that prop. Declared props: className, style, platform, color."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SocialIcons'] > JSXAttribute[name.name='platform'] > Literal[value!=/^(?:apple|discord|dribbble|facebook|figma|github|google|instagram|linkedin|medium|pinterest|reddit|signal|snapchat|spotify|telegram|tiktok|tumblr|twitch|vk|youtube|x \\(twitter\\)|threads|whatsapp|messenger|bluesky)$/]",
+        "message": "<SocialIcons> platform must be one of 'apple' | 'discord' | 'dribbble' | 'facebook' | 'figma' | 'github' | 'google' | 'instagram' | 'linkedin' | 'medium' | 'pinterest' | 'reddit' | 'signal' | 'snapchat' | 'spotify' | 'telegram' | 'tiktok' | 'tumblr' | 'twitch' | 'vk' | 'youtube' | 'x (twitter)' | 'threads' | 'whatsapp' | 'messenger' | 'bluesky'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SocialIcons'] > JSXAttribute[name.name='color'] > Literal[value!=/^(?:negative|original)$/]",
+        "message": "<SocialIcons> color must be one of 'negative' | 'original'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StreamlineFilmSlateSolid'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|style|key|ref|className|style|children)$/]",
+        "message": "<StreamlineFilmSlateSolid> doesn't accept that prop. Declared props: className, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Arrow1": {
+        "replaces": []
+      },
+      "Calendar": {
+        "replaces": []
+      },
+      "Color": {
+        "replaces": []
+      },
+      "DateActive": {
+        "replaces": []
+      },
+      "DateInactive": {
+        "replaces": []
+      },
+      "FluentArrowUp16Filled": {
+        "replaces": []
+      },
+      "Glowing": {
+        "replaces": []
+      },
+      "Icons": {
+        "replaces": []
+      },
+      "Informative": {
+        "replaces": []
+      },
+      "Month": {
+        "replaces": []
+      },
+      "SocialIcons": {
+        "replaces": []
+      },
+      "StreamlineFilmSlateSolid": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-deep",
+      "--black",
+      "--blush-025",
+      "--blush-050",
+      "--border-lilac",
+      "--border-subtle",
+      "--dur-base",
+      "--dur-fast",
+      "--dur-slow",
+      "--ease-cine",
+      "--font-alt",
+      "--font-core",
+      "--font-editorial",
+      "--font-script",
+      "--font-wordmark",
+      "--fs-body",
+      "--fs-caption",
+      "--fs-display-l",
+      "--fs-display-m",
+      "--fs-display-xl",
+      "--fs-heading",
+      "--fs-subhead",
+      "--fs-title",
+      "--fw-black",
+      "--fw-bold",
+      "--fw-extrabold",
+      "--fw-hairline",
+      "--fw-light",
+      "--fw-regular",
+      "--fw-semibold",
+      "--glow-magenta",
+      "--gradient-brand",
+      "--gradient-plum",
+      "--ink",
+      "--ink-raised",
+      "--lh-body",
+      "--lh-heading",
+      "--lh-tight",
+      "--lilac-100",
+      "--lilac-200",
+      "--ls-display",
+      "--ls-eyebrow",
+      "--magenta-300",
+      "--magenta-400",
+      "--magenta-500",
+      "--magenta-600",
+      "--magenta-700",
+      "--orchid-300",
+      "--orchid-400",
+      "--plum-800",
+      "--plum-900",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-none",
+      "--radius-pill",
+      "--radius-sm",
+      "--radius-xl",
+      "--shadow-card",
+      "--shadow-glow",
+      "--shadow-ink",
+      "--shadow-soft",
+      "--space-1",
+      "--space-10",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--surface-card",
+      "--surface-card-strong",
+      "--surface-inverse",
+      "--surface-page",
+      "--surface-raised",
+      "--text-muted",
+      "--text-on-light",
+      "--text-primary",
+      "--text-secondary",
+      "--white"
+    ],
+    "tokenKinds": {
+      "--black": "color",
+      "--ink": "color",
+      "--ink-raised": "color",
+      "--plum-900": "color",
+      "--plum-800": "color",
+      "--magenta-700": "color",
+      "--magenta-600": "color",
+      "--magenta-500": "color",
+      "--magenta-400": "color",
+      "--magenta-300": "color",
+      "--orchid-400": "color",
+      "--orchid-300": "color",
+      "--lilac-200": "color",
+      "--lilac-100": "color",
+      "--blush-050": "color",
+      "--blush-025": "color",
+      "--white": "color",
+      "--surface-page": "color",
+      "--surface-raised": "color",
+      "--surface-card": "color",
+      "--surface-card-strong": "color",
+      "--surface-inverse": "color",
+      "--text-primary": "font",
+      "--text-secondary": "font",
+      "--text-muted": "font",
+      "--text-on-light": "font",
+      "--border-subtle": "color",
+      "--border-lilac": "color",
+      "--accent": "color",
+      "--accent-deep": "color",
+      "--glow-magenta": "color",
+      "--shadow-ink": "shadow",
+      "--gradient-brand": "color",
+      "--gradient-plum": "color",
+      "--font-core": "font",
+      "--font-wordmark": "font",
+      "--font-alt": "font",
+      "--font-script": "font",
+      "--font-editorial": "font",
+      "--fs-display-xl": "spacing",
+      "--fs-display-l": "spacing",
+      "--fs-display-m": "spacing",
+      "--fs-title": "spacing",
+      "--fs-heading": "spacing",
+      "--fs-subhead": "spacing",
+      "--fs-body": "spacing",
+      "--fs-caption": "spacing",
+      "--lh-tight": "other",
+      "--lh-heading": "other",
+      "--lh-body": "other",
+      "--ls-display": "other",
+      "--ls-eyebrow": "other",
+      "--fw-hairline": "font",
+      "--fw-light": "font",
+      "--fw-regular": "font",
+      "--fw-semibold": "font",
+      "--fw-bold": "font",
+      "--fw-extrabold": "font",
+      "--fw-black": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-10": "spacing",
+      "--radius-none": "radius",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-xl": "radius",
+      "--radius-pill": "radius",
+      "--shadow-glow": "shadow",
+      "--shadow-card": "shadow",
+      "--shadow-soft": "shadow",
+      "--ease-cine": "other",
+      "--dur-fast": "other",
+      "--dur-base": "other",
+      "--dur-slow": "other"
+    },
+    "fontFamilies": [
+      "Lato",
+      "Montez",
+      "Montserrat",
+      "Playfair Display",
+      "Poppins"
+    ]
+  }
+}
